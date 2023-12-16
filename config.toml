@@ -1,0 +1,88 @@
+theme = "dark_plus"
+
+[editor]
+line-number = "relative"
+mouse = false
+bufferline = "multiple"
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.insert]
+C-right = ["move_next_word_start"]
+C-left = ["move_prev_word_start"]
+A-f = ":format"
+pageup = ["goto_prev_paragraph"]
+pagedown = ["goto_next_paragraph"]
+C-pageup = ["page_up"]
+C-pagedown = ["page_down"]
+S-del = ["kill_to_line_end"]
+tab = ["insert_tab"]
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+A-f = ":format" # run formatter
+A-s = ":w" # save current buffer
+A-q = ":buffer-close"
+A-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+] # move line up
+A-j = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "paste_after",
+] # move line down
+A-d = [
+  "extend_to_line_bounds",
+  "yank",
+  "open_below",
+  "normal_mode",
+  "replace_with_yanked",
+  "collapse_selection",
+] # Shift+Alt+down copy line down
+"C-A-p" = ":config-reload" # reload config from config file
+C-q = ":cquit 0"
+C-p = ":config-open" # open config file
+S-tab = ":buffer-previous"
+C-tab = ":buffer-next"
+tab = ["goto_last_accessed_file"]
+C-right = ["move_next_word_start"]
+C-left = ["move_prev_word_start"]
+pageup = ["goto_prev_paragraph"]
+pagedown = ["goto_next_paragraph"]
+C-pageup = ["page_up"]
+C-pagedown = ["page_down"]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+
+[keys.select]
+pageup = ["goto_prev_paragraph"]
+pagedown = ["goto_next_paragraph"]
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+#center = ["file-name"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+  "version-control",
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
