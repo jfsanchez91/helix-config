@@ -1,3 +1,6 @@
+[languaje-server]
+kotlin-language-server = { command = "kotlin-language-server" }
+
 [[languages]]
 name = "go"
 auto-format = true
@@ -37,3 +40,13 @@ validation = true
 [language-server.yaml-language-server.config.yaml.schemas]
 "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
+
+
+[[language]]
+name = "kotlin"
+scope = "source.kotlin"
+file-types = ["kt", "kts"]
+roots = ["settings.gradle", "settings.gradle.kts"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "kotlin-language-server" ]
