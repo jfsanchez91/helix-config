@@ -52,6 +52,8 @@ A-d = [
 "C-A-p" = ":config-reload" # reload config from config file
 C-q = ":cquit 0"
 C-p = ":config-open" # open config file
+C-j = ["goto_next_paragraph"]
+C-k = ["goto_prev_paragraph"]
 S-tab = ":buffer-previous"
 C-tab = ":buffer-next"
 tab = ["goto_last_accessed_file"]
@@ -69,6 +71,9 @@ right = "no_op"
 [keys.select]
 pageup = ["goto_prev_paragraph"]
 pagedown = ["goto_next_paragraph"]
+C-j = ["goto_next_paragraph"]
+C-k = ["goto_prev_paragraph"]
+
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
